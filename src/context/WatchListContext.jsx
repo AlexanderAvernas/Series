@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { createContext, useReducer, useContext, useEffect } from 'react';
 
 // Reducer to handle adding and removing shows
@@ -28,6 +29,7 @@ const watchListReducer = (state, action) => {
 const WatchListContext = createContext();
 
 // Create a custom hook to use the WatchListContext
+// eslint-disable-next-line react-refresh/only-export-components
 export const useWatchList = () => {
   return useContext(WatchListContext);
 };

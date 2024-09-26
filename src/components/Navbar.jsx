@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import styled from 'styled-components'; // Import styled-components
 import { Link } from 'react-router-dom';
+import { useWatchList } from "../context/WatchListContext";
 
 // Navbar component
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const {watchList} = useWatchList();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,9 +29,11 @@ const Navbar = () => {
   };
 
   return (
-    <Nav scrolled={scrolled}>
+    <Nav $scrolled={scrolled}>
       <NavContainer>
         <Logo>My Navbar</Logo>
+
+        <p>Saved shows: {watchList.length}</p>
 
         <Hamburger onClick={toggleMenu}>
           <span />
@@ -37,7 +41,8 @@ const Navbar = () => {
           <span />
         </Hamburger>
 
-        <NavLinks isOpen={isOpen}>
+
+        <NavLinks $isOpen={isOpen}>
           <li><StyledLink to="/">Home</StyledLink></li>
           <li><StyledLink to="/ListPage">List Page</StyledLink></li>
         </NavLinks>
@@ -56,7 +61,7 @@ const Nav = styled.nav`
   padding: 1rem 2rem;
   z-index: 1000;
   transition: background-color 0.3s ease;
-  background-color: ${({ scrolled }) => (scrolled ? 'black' : 'transparent')};
+  background-color: ${({ $scrolled }) => ($scrolled ? 'black' : 'transparent')};
 `;
 
 const NavContainer = styled.div`
@@ -108,7 +113,7 @@ const NavLinks = styled.ul`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transform: ${({ isOpen }) => (isOpen ? 'translateX(0)' : 'translateX(100%)')};
+    transform: ${({ $isOpen }) => ($isOpen ? 'translateX(0)' : 'translateX(100%)')};
     transition: transform 0.3s ease-in-out;
 
     li {

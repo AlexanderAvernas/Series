@@ -25,6 +25,7 @@ const AllSeries = () => {
     // Filter the series to diffirent genres depending if it incluedes the the choosen genre
     const dramaSeries = allSeries.filter((series) => series.genres.includes("Drama"));
     const comedySeries = allSeries.filter((series) => series.genres.includes("Comedy"));
+    const thrillerSeries = allSeries.filter((series) => series.genres.includes("Thriller"));
 
 
   return (
@@ -32,6 +33,7 @@ const AllSeries = () => {
         <h1>All series</h1>
         <SeriesByGenre title="Drama Series" series={dramaSeries} loading={loading}/>
         <SeriesByGenre title="Comedy Series" series={comedySeries} loading={loading}/>
+        <SeriesByGenre title="Thriller Series" series={thrillerSeries} loading={loading}/>
         {/* <DramaSeries series={dramaSeries}/>
         <ComedySeries series={comedySeries}/> */}
     </div>

@@ -1,16 +1,10 @@
 import { Link } from "react-router-dom";
-import { useWatchList } from "../context/WatchListContext";
 import styled from "styled-components";
 import Skeleton from "react-loading-skeleton";
 import 'react-loading-skeleton/dist/skeleton.css';
 
 /* eslint-disable react/prop-types */
   const SeriesByGenre = ({ title, series, loading }) => {
-  const { dispatch } = useWatchList();
-
-  const addToWatchList = (show) => {
-    dispatch({ type: 'ADD_TO_LIST', payload: show });
-  };
 
   return (
     <div>
@@ -28,8 +22,6 @@ import 'react-loading-skeleton/dist/skeleton.css';
               <InnerContainer key={show.id}>
                 <Link to={`/show/${show.id}`}>
                   <img src={show.image?.medium} alt={show.name} />
-                  <p>Actors: {show.actors?.join(', ') || 'N/A'}</p>
-                  <button onClick={() => addToWatchList(show)}>Add To List</button>
                 </Link>
               </InnerContainer>
             ))}

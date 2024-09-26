@@ -15,7 +15,6 @@ const ShowDetails = () => {
     const [loading, setLoading] = useState(true)
     const [loadingEpisodes, setLoadingEpisodes] = useState(true);
     const { dispatch } = useWatchList();
-    const {watchList} = useWatchList();
 
     const addToWatchList = (show) => {
         dispatch({ type: 'ADD_TO_LIST', payload: show });
@@ -98,6 +97,7 @@ const Container = styled.div `
 display: flex;
 flex-direction: column;
 padding: 2rem;
+margin-top: 5rem;
 
 @media (min-width: 1025px) {
     padding: 2rem 10rem;
@@ -146,7 +146,7 @@ const ExitButton = styled(Link)`
   justify-content: center;
   align-items: center;
   position: absolute; /* Change to absolute for positioning */
-  top: 2rem;  /* Adjust position from the top */
+  top: 4rem;  /* Adjust position from the top */
   right: 2rem; /* Adjust position from the right */
   z-index: 10; /* Ensure it appears above the image */
   border: none;

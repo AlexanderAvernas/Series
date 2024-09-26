@@ -2,11 +2,12 @@
 import Skeleton from "react-loading-skeleton";
 import styled from "styled-components";
 import ImageWithSkeleton from "./skeleton/ImageWithSkeleton";
+import DOMPurify from "dompurify";  // Import DOMPurify for sanitizing HTML
 
 const EpisodeList = ({ episodes, loading }) => {
   return (
     <div>
-      <h2>Episodes</h2>
+      <Header>Episodes</Header>
       {loading ? (
         <Skeleton height={20} count={5} />
       ) : (
@@ -18,7 +19,7 @@ const EpisodeList = ({ episodes, loading }) => {
               <p>
                 Season {episode.season}, Episode {episode.number}
               </p>
-              <p>{episode.summary}</p>
+              <p dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(episode.summary) }} /> {/* Sanitize summary */}
             </EpisodeItem>
           ))}
         </StyledEpisodeList>
@@ -29,8 +30,15 @@ const EpisodeList = ({ episodes, loading }) => {
 
 export default EpisodeList;
 
+const Header = styled.h2 `
+padding-top: 3rem;
+padding-left: 10px;
+text-decoration: underline;
+line-height: 1.3;
+`
+
 const StyledEpisodeList = styled.div`
-  margin-top: 1rem;
+
 `;
 
 const EpisodeItem = styled.div`
