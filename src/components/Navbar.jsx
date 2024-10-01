@@ -31,7 +31,7 @@ const Navbar = () => {
   return (
     <Nav $scrolled={scrolled}>
       <NavContainer>
-        <Logo>My Navbar</Logo>
+        <Logo>WaLi</Logo>
 
         <p>Saved shows: {watchList.length}</p>
 
@@ -72,7 +72,12 @@ const NavContainer = styled.div`
 `;
 
 const Logo = styled.h1`
-  color: white;
+  color: #f31aab;
+  text-shadow:
+    1px 1px 0px white,  /* Right bottom shadow */
+    -1px 1px 0px white, /* Left bottom shadow */
+    1px -1px 0px white, /* Right top shadow */
+    -1px -1px 0px white; /* Left top shadow */
 `;
 
 // Hamburger Menu

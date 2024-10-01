@@ -97,7 +97,7 @@ const Container = styled.div `
 display: flex;
 flex-direction: column;
 padding: 2rem;
-margin-top: 5rem;
+
 
 @media (min-width: 1025px) {
     padding: 2rem 10rem;

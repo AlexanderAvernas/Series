@@ -30,8 +30,9 @@ import 'react-loading-skeleton/dist/skeleton.css';
   );
 };
 
-const Header = styled.h1 `
-color: blue;
+const Header = styled.h3 `
+color: white;
+padding: 0.5rem 0.5rem;
 `
 const Container = styled.div `
 display: flex;

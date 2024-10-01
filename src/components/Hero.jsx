@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import SeriesHero from '../assets/SeriesHero.jpg'
+import HeroImage from '../assets/HeroImage.jpg';
 
 const Hero = () => {
   return (
@@ -18,28 +18,31 @@ const HeroSection = styled.section`
   position: relative;
   width: 100%;
   height: 100vh; /* Full screen height */
-  background-image: url(${SeriesHero.jpg}); /* Replace with your image */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 70%, rgb(27, 26, 26) 100%),
+              url(${HeroImage}); /* Combine gradient with hero image */
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  overflow: hidden;
 
   /* Media queries for responsiveness */
   @media (max-width: 768px) {
-    height: 80vh; /* Adjust the height on smaller screens */
+    height: 80vh;
   }
 
   @media (max-width: 480px) {
-    height: 60vh; /* Adjust further for mobile */
+    height: 60vh;
   }
 `;
 
 // Centered content
 const HeroContent = styled.div`
   position: relative;
-  z-index: 2; /* Ensures content stays above the background image */
+  z-index: 2;
   color: white;
 `;
 
@@ -49,13 +52,19 @@ const HeroText = styled.h1`
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: white;
+  color: #f01184;
+  border: 5px solid white;
+  text-shadow:
+    2px 2px 0px black,
+    -2px 2px 0px black,
+    2px -2px 0px black,
+    -2px -2px 0px black;
 
   @media (max-width: 768px) {
-    font-size: 3rem; /* Smaller font for tablets */
+    font-size: 3rem;
   }
 
   @media (max-width: 480px) {
-    font-size: 2rem; /* Even smaller for mobile devices */
+    font-size: 2rem;
   }
 `;

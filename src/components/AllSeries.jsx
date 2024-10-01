@@ -30,7 +30,6 @@ const AllSeries = () => {
 
   return (
     <div>
-        <h1>All series</h1>
         <SeriesByGenre title="Drama Series" series={dramaSeries} loading={loading}/>
         <SeriesByGenre title="Comedy Series" series={comedySeries} loading={loading}/>
         <SeriesByGenre title="Thriller Series" series={thrillerSeries} loading={loading}/>
