@@ -1,7 +1,5 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-// import DramaSeries from "./DramaSeries"
-// import ComedySeries from "./ComedySeries"
 import SeriesByGenre from "./SeriesByGenre"
 
 const AllSeries = () => {
@@ -33,8 +31,6 @@ const AllSeries = () => {
         <SeriesByGenre title="Drama Series" series={dramaSeries} loading={loading}/>
         <SeriesByGenre title="Comedy Series" series={comedySeries} loading={loading}/>
         <SeriesByGenre title="Thriller Series" series={thrillerSeries} loading={loading}/>
-        {/* <DramaSeries series={dramaSeries}/>
-        <ComedySeries series={comedySeries}/> */}
     </div>
   )
 }

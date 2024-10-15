@@ -96,11 +96,11 @@ export default ShowDetails
 const Container = styled.div `
 display: flex;
 flex-direction: column;
-padding: 2rem;
+padding: 4rem 2rem;
 
 
 @media (min-width: 1025px) {
-    padding: 2rem 10rem;
+    padding: 4rem 10rem;
 }
 `;
 
@@ -157,12 +157,19 @@ const ExitButton = styled(Link)`
 `;
 
 const AddButton = styled.button `
-background-color: rgba(255, 0, 162, 1);
+background-color: #ed179e;
 padding: 0.5rem 1rem;
 font-size: 1rem;
 color: white;
 margin-top: 0.5rem;
 cursor: pointer;
+border: none;
+border-radius: 5px;
+transition: transform 0.2s ease, background-color 0.2s ease;
+&:hover {
+    background-color: #d4168d; /* Optional: a slight color change on hover */
+    transform: scale(1.05);
+  }
 `
 
 const Image = styled.img`

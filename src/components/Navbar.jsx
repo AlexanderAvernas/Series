@@ -3,8 +3,8 @@ import styled from 'styled-components'; // Import styled-components
 import { Link } from 'react-router-dom';
 import { useWatchList } from "../context/WatchListContext";
 
-// Navbar component
-const Navbar = () => {
+// eslint-disable-next-line react/prop-types
+const Navbar = ({onSearchClick}) => {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const {watchList} = useWatchList();
@@ -31,21 +31,24 @@ const Navbar = () => {
   return (
     <Nav $scrolled={scrolled}>
       <NavContainer>
+        <Link to={'/'} style={{textDecoration: "none"}}>
         <Logo>WaLi</Logo>
-
-        <p>Saved shows: {watchList.length}</p>
-
+        </Link>
+     <LinkContainer>
+        <SearchIcon onClick={onSearchClick}>
+          <p>🔍</p>
+        </SearchIcon>
+        <StyledLink to="/ListPage"><NumberContainer>{watchList.length}</NumberContainer></StyledLink>
+        <NavLinks $isOpen={isOpen}>
+          <li><StyledLink to="/">Home</StyledLink></li>
+          <li><StyledLink to="/ListPage">List Page</StyledLink></li>
+        </NavLinks>
         <Hamburger onClick={toggleMenu}>
           <span />
           <span />
           <span />
         </Hamburger>
-
-
-        <NavLinks $isOpen={isOpen}>
-          <li><StyledLink to="/">Home</StyledLink></li>
-          <li><StyledLink to="/ListPage">List Page</StyledLink></li>
-        </NavLinks>
+        </LinkContainer>
       </NavContainer>
     </Nav>
   );
@@ -84,6 +87,7 @@ const Logo = styled.h1`
 const Hamburger = styled.div`
   display: none;
   cursor: pointer;
+  margin-left: 5px;
 
   span {
     display: block;
@@ -105,7 +109,7 @@ const NavLinks = styled.ul`
   display: flex;
 
   li {
-    margin-left: 20px;
+    margin-left: 10px;
   }
 
   @media (max-width: 768px) {
@@ -133,7 +137,34 @@ const StyledLink = styled(Link)`
   font-size: 18px;
   transition: color 0.3s ease;
 
-  &:hover {
-    color: #f3a683;
+ &:hover {
+    transform: scale(1.05);
   }
 `;
+
+const NumberContainer = styled.div`
+border-radius: 50%;
+width: 2rem;
+height: 2rem;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: #cb1869;
+margin-left: 5px;
+`;
+
+const SearchIcon = styled.div`
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  font-size: 18px;
+  transition: color 0.3s ease;
+
+&:hover {
+  color: #f3a683;
+}
+`;
+
+const LinkContainer = styled.div `
+display: flex;
+`

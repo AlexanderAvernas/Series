@@ -37,9 +37,14 @@ padding: 0.5rem 0.5rem;
 const Container = styled.div `
 display: flex;
 overflow-x: scroll;
+overflow-y: hidden;
 `
 const InnerContainer = styled.div `
 margin: 0rem 0.5rem;
+transition: transform 0.3s ease;
+&:hover {
+    transform: scale(1.04); /* Scale the button slightly larger */
+  }
 `
 
 export default SeriesByGenre;

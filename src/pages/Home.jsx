@@ -7,7 +7,9 @@ const Home = () => {
   return (
     <div>
         <Hero/>
+        <div style={{padding: "3rem 1rem"}}>
         <AllSeries/>
+        </div>
         <Link to="/ListPage">Link</Link>
     </div>
   )
