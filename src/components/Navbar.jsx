@@ -75,7 +75,7 @@ const NavContainer = styled.div`
 `;
 
 const Logo = styled.h1`
-  color: #f31aab;
+  color: #ff0ada;
   text-shadow:
     1px 1px 0px white,  /* Right bottom shadow */
     -1px 1px 0px white, /* Left bottom shadow */
@@ -149,7 +149,7 @@ height: 2rem;
 display: flex;
 justify-content: center;
 align-items: center;
-background-color: #cb1869;
+background-color: #ff0ada;
 margin-left: 5px;
 `;
 

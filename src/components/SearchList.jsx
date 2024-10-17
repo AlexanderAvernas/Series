@@ -13,7 +13,7 @@ const SearchList = ({ onClose }) => {
     const query = e.target.value;
     setSearchQuery(query);
 
-    if (query.length > 2) {
+    if (query.length > 0) {
         setLoading(true); // Set loading to true when search starts
         try {
           const response = await fetch(`https://api.tvmaze.com/search/shows?q=${query}`);
