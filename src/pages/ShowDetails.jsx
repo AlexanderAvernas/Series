@@ -157,7 +157,7 @@ const ExitButton = styled(Link)`
 `;
 
 const AddButton = styled.button `
-background-color: #ed179e;
+background-color: #cb2eb3;
 padding: 0.5rem 1rem;
 font-size: 1rem;
 color: white;

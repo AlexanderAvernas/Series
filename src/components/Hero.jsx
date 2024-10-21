@@ -52,7 +52,7 @@ const HeroText = styled.h1`
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #ff0ada;
+  color: #cb2eb3;
   border: 5px solid white;
   text-shadow:
     2px 2px 0px black,

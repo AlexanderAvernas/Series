@@ -92,14 +92,14 @@ const ShowCard = styled.div`
 `;
 
 const RemoveButton = styled.button`
-  background-color: #ff0ada;
+  background-color: #cb2eb3;
   color: white;
   padding: 0.2rem 0.6rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   margin-top: 0.5rem;
-  transition: transform 0.2s ease, background-color 0.2s ease; 
+  transition: transform 0.2s ease, background-color 0.2s ease;
   &:hover {
     background-color: #d4168d; /* Optional: a slight color change on hover */
     transform: scale(1.05);

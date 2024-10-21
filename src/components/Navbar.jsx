@@ -28,6 +28,11 @@ const Navbar = ({onSearchClick}) => {
     setIsOpen(!isOpen);
   };
 
+  const closeMenu = () => {
+    setIsOpen(false); // Close the menu when a link is clicked
+  };
+
+
   return (
     <Nav $scrolled={scrolled}>
       <NavContainer>
@@ -40,8 +45,8 @@ const Navbar = ({onSearchClick}) => {
         </SearchIcon>
         <StyledLink to="/ListPage"><NumberContainer>{watchList.length}</NumberContainer></StyledLink>
         <NavLinks $isOpen={isOpen}>
-          <li><StyledLink to="/">Home</StyledLink></li>
-          <li><StyledLink to="/ListPage">List Page</StyledLink></li>
+          <li><StyledLink to="/" onClick={closeMenu}>Home</StyledLink></li>
+          <li><StyledLink to="/ListPage" onClick={closeMenu}>List Page</StyledLink></li>
         </NavLinks>
         <Hamburger onClick={toggleMenu}>
           <span />
@@ -75,7 +80,7 @@ const NavContainer = styled.div`
 `;
 
 const Logo = styled.h1`
-  color: #ff0ada;
+  color: #cb2eb3;
   text-shadow:
     1px 1px 0px white,  /* Right bottom shadow */
     -1px 1px 0px white, /* Left bottom shadow */
@@ -149,7 +154,7 @@ height: 2rem;
 display: flex;
 justify-content: center;
 align-items: center;
-background-color: #ff0ada;
+background-color: #cb2eb3;
 margin-left: 5px;
 `;
 
