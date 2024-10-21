@@ -4,10 +4,13 @@ const Footer = () => {
   return (
     <FooterContainer>
       <FooterContent>
-
+      <FooterSection>
+          <h4>About</h4>
+          <p>Make a watchlist</p>
+        </FooterSection>
         <FooterSection>
           <h4>Contact</h4>
-          <p>Email: info@example.com</p>
+          <p>Email: info@watchlist.com</p>
           <p>Phone: +123456789</p>
         </FooterSection>
         <FooterSection>
@@ -27,9 +30,10 @@ const Footer = () => {
 export default Footer;
 
 const FooterContainer = styled.footer`
-  color: #fff;
+  color: #cb2eb3;
   padding: 20px 0;
   text-align: center;
+  background-color: black;
 `;
 
 const FooterContent = styled.div`

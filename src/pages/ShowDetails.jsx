@@ -21,6 +21,8 @@ const ShowDetails = () => {
       };
 
     useEffect(() => {
+        window.scrollTo(0, 0); // This ensures the page scrolls to the top on load
+
         axios.get(`https://api.tvmaze.com/shows/${id}`) // Fetching specific show using the ID from the URL
         .then((response) => {
             setShow(response.data);
@@ -146,8 +148,8 @@ const ExitButton = styled(Link)`
   justify-content: center;
   align-items: center;
   position: absolute; /* Change to absolute for positioning */
-  top: 4rem;  /* Adjust position from the top */
-  right: 2rem; /* Adjust position from the right */
+  top: 4.7rem;  /* Adjust position from the top */
+  right: 2.8rem; /* Adjust position from the right */
   z-index: 10; /* Ensure it appears above the image */
   border: none;
   cursor: pointer;

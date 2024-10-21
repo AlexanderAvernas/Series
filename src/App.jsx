@@ -7,7 +7,6 @@ import { WatchListProvider } from './context/WatchListContext';
 import Navbar from './components/Navbar';
 import SearchList from './components/SearchList';
 import { useState } from 'react';
-import Footer from './components/Footer';
 
 function App() {
 
@@ -31,7 +30,6 @@ function App() {
          <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       </Router>
-      <Footer/>
       </WatchListProvider>
     </>
   )
