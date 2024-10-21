@@ -21,7 +21,7 @@ const ShowDetails = () => {
       };
 
     useEffect(() => {
-        window.scrollTo(0, 0); // This ensures the page scrolls to the top on load
+        window.scrollTo(0, 60); // This ensures the page scrolls to the top on load
 
         axios.get(`https://api.tvmaze.com/shows/${id}`) // Fetching specific show using the ID from the URL
         .then((response) => {
