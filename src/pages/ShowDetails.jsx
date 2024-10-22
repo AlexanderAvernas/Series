@@ -143,7 +143,7 @@ const ExitButton = styled(Link)`
   height: 2.5rem;
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.7); /* Add background to make it visible */
-  color: white;
+  color: white !important;
   display: flex;
   justify-content: center;
   align-items: center;

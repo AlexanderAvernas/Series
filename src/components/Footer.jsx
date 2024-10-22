@@ -21,7 +21,7 @@ const Footer = () => {
         </FooterSection>
       </FooterContent>
       <FooterBottom>
-        <p>&copy; {new Date().getFullYear()} Your Website Name. All Rights Reserved.</p>
+        <p>&copy; {new Date().getFullYear()} WatchList. All Rights Reserved.</p>
       </FooterBottom>
     </FooterContainer>
   );
