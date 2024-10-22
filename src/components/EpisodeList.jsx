@@ -31,7 +31,7 @@ const EpisodeList = ({ episodes, loading }) => {
 export default EpisodeList;
 
 const Header = styled.h2 `
-padding-top: 3rem;
+padding-top: 2rem;
 padding-left: 10px;
 text-decoration: underline;
 line-height: 1.3;

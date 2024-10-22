@@ -79,10 +79,10 @@ const ShowDetails = () => {
               <p>{show.rating.average} ⭐ </p>
               <p>First episode: {show.premiered}</p>
               <p>Last episode: {show.ended === null ? 'Still running' : show.ended}</p> {/* lägg till ternery om den är still running */}
+              <AddButton onClick={() => addToWatchList(show)}>Add To List</AddButton>
               </ImageContainer>
               <InfoContainer>
               <p dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(show.summary) }} /> {/* Sanitize summary */}
-              <AddButton onClick={() => addToWatchList(show)}>Add To List</AddButton>
               </InfoContainer>
               </InnerContainer>
               <EpisodeList episodes={episodes} loading={loadingEpisodes} />
